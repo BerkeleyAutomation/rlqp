@@ -1,5 +1,7 @@
 # RLQP: Accelerating Quadratic Optimization with RL
 
+<img src="https://raw.githubusercontent.com/BerkeleyAutomation/rlqp/gh_pages/assets/rlqp-img/conceptual_figure.png?token=AADOZWQXPT5BO5YXHRI7GULA5XWUG">
+
 We demonstrate reinforcement learning can significantly accelerate first-order optimization, outperforming state-of-the-art solvers by up to 3x. RLQP avoids suboptimal heuristics within solvers by tuning the internal parameters of the ADMM algorithm. By decomposing the policy as a multi-agent partially observed problem, RLQP adapts to unseen problem classes and to larger problems than seen during training.
 
 ## Getting Started
