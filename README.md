@@ -1,3 +1,2 @@
----
-permalink: /index.html
----
+# RLQP: Accelerating Quadratic Optimization with Reinforcement Learning
+
