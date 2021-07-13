@@ -1,0 +1,6 @@
+[submodule "rlqp_train"]
+	path = rlqp_train
+	url = https://github.com/BerkeleyAutomation/rlqp_train
+[submodule "rlqp-python"]
+	path = rlqp-python
+	url = https://github.com/BerkeleyAutomation/rlqp-python
