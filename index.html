@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RLQP: Accelerating Quadratic Optimization with Reinforcement Learning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Team-Clean.css">
+
+    <meta property="og:site_name" content="RLQP: Accelerating Quadratic Optimization with Reinforcement Learning" />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:title" content="Accelerating Quadratic Optimization with Reinforcement Learning" />
+    <meta property="og:description" content="First-order methods for quadratic optimization such as OSQP are widely used for large-scale machine learning and embedded optimal control, where many related problems must be rapidly solved. These methods face two persistent challenges: manual hyperparameter tuning and convergence time to high-accuracy solutions. To address these, we explore how Reinforcement Learning (RL) can learn a policy to tune parameters to accelerate convergence. In experiments with well-known QP benchmarks we find that our RL policy, RLQP, significantly outperforms state-of-the-art QP solvers by up to 3x. RLQP generalizes surprisingly well to previously unseen problems with varying dimension and structure from different applications, including the QPLIB, Netlib LP and Maros-Meszaros problems." />
+    <meta property="og:url" content="https://jeffi.github.io/rlqp/" />
+    <!-- <meta property="og:image" content="https://parasj.github.io/contracode/assets/img/conceptual_twitter.png" /> -->
+  
+    <meta property="article:publisher" content="https://github.com/parasj" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Accelerating Quadratic Optimization with Reinforcement Learning" />
+    <meta name="twitter:description" content="First-order methods for quadratic optimization such as OSQP are widely used for large-scale machine learning and embedded optimal control, where many related problems must be rapidly solved. These methods face two persistent challenges: manual hyperparameter tuning and convergence time to high-accuracy solutions. To address these, we explore how Reinforcement Learning (RL) can learn a policy to tune parameters to accelerate convergence. In experiments with well-known QP benchmarks we find that our RL policy, RLQP, significantly outperforms state-of-the-art QP solvers by up to 3x. RLQP generalizes surprisingly well to previously unseen problems with varying dimension and structure from different applications, including the QPLIB, Netlib LP and Maros-Meszaros problems." />
+    <meta name="twitter:url" content="https://jeffi.github.io/rlqp/" />
+    <!-- <meta name="twitter:image" content="https://parasj.github.io/contracode/assets/img/conceptual_twitter.png" /> -->
+    <meta name="twitter:site" content="@_parasj" />
+</head>
+
+<body>
+    <div class="highlight-clean" style="padding-bottom: 10px;">
+        <div class="container">
+            <h1 class="text-center">Accelerating Quadratic Optimization<br />with Reinforcement Learning</h1>
+        </div>
+        <br />
+        <div class="container" style="max-width: 768px;">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="text-center" style="margin: 0px;"><a href="https://ichnow.ski/">Jeff Ichnowski</a></h5>
+                    <h6 class="text-center">UC Berkeley</h6>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-center" style="margin: 0px;"><a class="text-center" href="https://www.parasjain.com/">Paras Jain</a></h5>
+                    <h6 class="text-center">UC Berkeley</h6>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-center" style="margin: 0px;"><a class="text-center" href="https://stellato.io">Bartolomeo Stellato</a></h5>
+                    <h6 class="text-center">Princeton</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="text-center" style="margin: 0px;"><a class="text-center" href="https://people.ee.ethz.ch/~gbanjac/">Goran Banjac</a></h5>
+                    <h6 class="text-center">ETH Zurich</h6>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-center" style="margin: 0px;"><a class="text-center" href="">Michael Luo</a></h5>
+                    <h6 class="text-center">UC Berkeley</h6>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-center" style="margin: 0px;"><a class="text-center" href="https://me.berkeley.edu/people/francesco-borrelli/">Francesco Borrelli</a></h5>
+                    <h6 class="text-center">UC Berkeley</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="text-center" style="margin: 0px;"><a class="text-center" href="https://people.eecs.berkeley.edu/~jegonzal/">Joseph Gonzalez</a></h5>
+                    <h6 class="text-center">UC Berkeley</h6>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-center" style="margin: 0px;"><a class="text-center" href="https://people.eecs.berkeley.edu/~istoica/">Ion Stoica</a></h5>
+                    <h6 class="text-center">UC Berkeley</h6>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="text-center" style="margin: 0px;"><a class="text-center" href="https://goldberg.berkeley.edu">Ken Goldberg</a></h5>
+                    <h6 class="text-center">UC Berkeley</h6>
+                </div>
+            </div>
+        </div>
+        <div class="buttons" style="margin-bottom: 8px;">
+            <a class="btn btn-primary" role="button" href="">Paper (arXiv)</a>
+            <a class="btn btn-light" role="button" href="https://github.com/jeffi/rlqp">GitHub (coming soon)</a>
+        </div>
+        <br />
+        <div class="container" style="max-width: 768px;">
+            <div class="row">
+                <div class="col-md-12 text-center"><img src="assets/rlqp-img/conceptual_figure.png" style="width: 100%;margin-bottom: 8px;" alt="Conceptual overview of RLQP">
+                    <em>We demonstrate reinforcement learning can significantly accelerate first-order optimization, <strong>outperforming state-of-the-art solvers by up to 3x</strong>. RLQP avoids suboptimal heuristics within solvers by tuning the internal parameters of the ADMM algorithm. By decomposing the policy as a multi-agent partially observed problem, RLQP adapts to unseen problem classes and to larger problems than seen during training.</em></div>
+            </div>
+        </div>
+    </div>
+    <hr style="max-width: 768px;">
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Summary</h2>
+                <ul>
+                    <li>Quadratic programming (QP) is a critical tool in robotics and finance. However, <strong>first-order solvers are slow for large problems</strong> requiring 1000s of iterations to converge.</li>
+                    <li><a href="https://arxiv.org/abs/1711.08013">ADMM-based QP solvers</a> are state-of-the-art at QPs optimization but these methods have <strong>numerous problem-specific ad-hoc heuristics</strong> that must be empirically tuned for good performance.</li>
+                    <li>In RLQP, we propose an RL policy to adaptively select the critical \(\rho\) parameter in an open-source ADMM-based solver. Our policy is trained on a distibuion of randomly generated QPs.</li>
+                    <li>We extend <a href="https://arxiv.org/abs/1802.09477">Twin Delayed DDPG (TD3)</a> to a multi-agent formulation in order to enable RLQP to generalize to novel out-of-distribution QPs at test time. Factorizing the agent enables evaluating with variable dimension observation and action spaces.</li>
+                    <li>Overall, RLQP is 4x faster than Gurobi and 3x faster than OSQP when trained over a benchmark set of QPs. Further speedups can be attained by speciaizing a policy for a single class of QPs. RLQP generalizes to challenging out-of-distribution QPs from the Netlib as well as the Maros and Meszaros problem sets.</li>
+                </ul>
+        </div>
+    </div>
+    <hr style="max-width: 768px;">
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Abstract</h2>
+                <p>
+First-order methods for quadratic optimization such as OSQP are widely used for large-scale machine learning and embedded optimal control, where many related problems must be rapidly solved. These methods face two persistent challenges: manual hyperparameter tuning and convergence time to high-accuracy solutions. To address these, we explore how Reinforcement Learning (RL) can learn a policy to tune parameters to accelerate convergence. In experiments with well-known QP benchmarks we find that our RL policy, RLQP, significantly outperforms state-of-the-art QP solvers by up to 3x. RLQP generalizes surprisingly well to previously unseen problems with varying dimension and structure from different applications, including the QPLIB, Netlib LP and Maros-Mészáros problems.
+                <br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr style="max-width: 768px;">
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Quadratic programming</h2>
+<p>
+We consider optimizing quadratic programs (QPs) with \(n\) variables and \(m\) constraints of the form:
+\[\begin{equation*}
+\begin{array}{ll}
+\mbox{minimize} & (1/2)x^TPx + q^Tx\\
+\mbox{subject to} & l \le Ax \le u,
+\end{array} 
+\end{equation*}\]
+With a positive semi-definite \(P \in \mathbb{S}_+\), this QP represents a convex optimization problem.
+</p>
+
+<p>
+These problems find frequent application to finance, machine learning and robotic control. For example, quadratic programming is critical to Model Predictive Control (MPC) for robotics. Given a problem with linear dynamics, the optimal solution is derived by solving a QP.
+</p>
+
+<p>
+The current SOTA solver for QPs is the <a href="https://osqp.org">Operator Splitting Quadratic Program solver</a> which is based on ADMM. OSQP first factorizes the KKT matrix derived from optimality conditions and then iteratively applying a series of updates scaled by the step-size parameter \(\rho\). However, optimal choice of \(\rho\) is difficult or impossible to determine. While some offline methods exist, these methods rely on solving expensive SDPs. Frequently, simple heuristics are used that attempt to balance the primal and dual residuals. For example, OSQP will set the \(\rho\) vector to \(\rho^{(k+1)} \leftarrow \rho^{(k)} \sqrt{\|\xi_\mathrm{primal}\| / \|\xi_\mathrm{dual}\|}\).
+</p>
+
+            </div>
+        </div>
+    </div>
+    <hr style="max-width: 768px;">
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Accelerating QP optimization with RLQP</h2>
+<p>
+In order to automatically select \(\rho\), RLQP learns a policy to automatically adapt a single scalar \(\bar{\rho}\) value to be used for all constraints. Integrating this policy into solvers is straightforward as the current heuristic in OSQP already generates a single scalar adaptation. This policy also can simply check that the proposed change to \(\bar\rho\) is sufficiently small and avoid a costly matrix factorization. 
+</p>
+<p>
+In both handcrafted and RL cases, the policy is a function \(\pi : S_{\bar\rho} \rightarrow A_{\bar\rho}\), where \(S_{\bar\rho} \in \mathbb{R}^2\) are the primal and dual residuals stacked into a vector, \(A_{\bar\rho} \in \mathbb{R}\) is the value to set to \(\bar\rho\). The observation space and action space closely reflect what the current heuristic considers in QP solvers.
+</p>
+<p>
+This simple scalar policy outperforms the handwritten heuristic in OSQP. However, this simple policy does not consider variations in how \(\rho\) should be adapted across constraints. However, it is not clear how to craft a policy for a simple vectorized environment while supporting problems with a variable number of constraints. Ideally, a policy will consider an observation space of all residuals with an action space to predict all \(\rho\) values at once. However, this policy would need to be trained for a particular number of constraints and would not adapt to arbitrary problems. The
+</p>
+<p>
+Instead, we consider a reformulation of the vectorized environment as a multi-agent partially-observed MDP. Given a QP with \(m\) constraints, we factorize the global policy into \(m\) indepentent policies that consider observations for a single constraint and predict a single \(\rho_i\) value. Therefore, the observation spaces and action spaces for these policies are fully indepentent from each other. We then share parameters for the policy across all constraints. Remarkably, we find the vector policy generalizes to problems with more constraints than seen during training.
+</p>
+            </div>
+        </div>
+    </div>
+    <hr style="max-width: 768px;">
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Citation</h2>
+                <p>Jeff Ichnowski, Paras Jain, Bartolomeo Stellato, Goran Banjac, Michael Luo, Francesco Borrelli, Joseph E. Gonzalez, Ion Stoica, Ken Goldberg. Accelerating Quadratic Optimization with Reinforcement Learning.<strong>&nbsp;In submission,</strong>&nbsp;2021. <!--em>* Denotes equal contribution.</em--><br></p>
+                <code>
+@article{ichnowski2021rlqp,<br>
+&nbsp; title={Accelerating Quadratic Optimization with Reinforcement Learning},<br>
+&nbsp; author={Jeff Ichnowski, Paras Jain, Bartolomeo Stellato,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;and Goran Banjac, Michael Luo, Francesco Borrelli<br>
+&nbsp;&nbsp;&nbsp;&nbsp;and Joseph E. Gonzalez, Ion Stoica, Ken Goldberg},<br>
+&nbsp; year={2021},<br>
+&nbsp; journal={arXiv preprint}<br>}<br></code></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+
+</html>
