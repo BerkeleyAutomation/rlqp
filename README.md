@@ -12,13 +12,13 @@ RLQP is composed of a few submodules, namely to (a) train the RL policy on a spe
 ### Installation (evaluation)
 To install the Python package to *evaluate* a pre-trained policy, run:
 ```
-pip install rlqp
+pip install git+https://github.com/berkeleyautomation/rlqp-python.git@55f378e496979bd00e84cea4583ac37bfaa571a9
 ```
 
 This package contains a pre-trained model which should improve convergence beyond OSQP. The interface is identical to OSQP.
 
 ### Installation (training)
-Please follow the instructions in the `rlqp_train/` directory to setup and run training code.
+Please follow the instructions in the `rlqp_train/` directory to setup and run training code. This code is still in *preview* mode as we work to release features like our TD3 policy.
 
 ## Citation
 ```
