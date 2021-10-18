@@ -24,7 +24,7 @@ Please follow the instructions in the `rlqp_train/` directory to setup and run t
 ```
 @article{ichnowski2021rlqp,
   title={Accelerating Quadratic Optimization with Reinforcement Learning},
-  author={Jeff Ichnowski, Paras Jain, Bartolomeo Stellato,
+  author={Jeffrey Ichnowski, Paras Jain, Bartolomeo Stellato,
     and Goran Banjac, Michael Luo, Francesco Borrelli
     and Joseph E. Gonzalez, Ion Stoica, Ken Goldberg},
   year={2021},
